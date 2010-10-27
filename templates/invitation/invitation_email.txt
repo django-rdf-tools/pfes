@@ -1,0 +1,13 @@
+﻿Bonjour
+
+Ceci est une invitation à venir participer à la construction du site web régional {{ site.name }}. Elle vous a été envoyée par {{ sender }}.
+Pour vous inscrire sur la plate-forme, il vous suffit de cliquer sur le lien ci-dessous:
+
+http://{{site.domain}}/accounts/invited/{{invitation_key}}/
+
+Si le clic ne donne rien, copiez-collez cette adresse dans la barre d'adresse de votre navigateur web (c'est là ou se trouve déjà en général une adresse http://...)
+
+Ce lien expirera dans {{expiration_days}} jours.
+
+Merci pour votre inscription!
+L'equipe de {{site.name}}

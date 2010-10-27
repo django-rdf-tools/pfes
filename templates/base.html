@@ -1,0 +1,63 @@
+﻿{% load i18n %}
+{% load icons %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+    <title>{% block metatitle %}{{site_name}}{% endblock %}</title>
+    <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Lobster&subset=latin' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+    {% block headers %}
+    {% endblock headers %}
+
+</head>
+<body>
+<h1>Plate-forme d'échanges solidaires <!--<img src="/media/auvergne.png" id="bulle-auvergne"/>--></h1>
+
+<h2>{% block title %}Base text{% endblock %}</h2>
+
+{% block colonne %}
+{% endblock colonne %}
+
+<div id="content">
+{% block content %}
+{% endblock %}
+</div>       
+    
+
+<div id="footer">
+    <hr/>
+    
+    <p style="display:none" class="support">
+    <label>Coordination : </label>Emmanuelle Poix ( <a href="http://www.credis.org">CREDIS</a> ) 04.73.19.95.74 - <a href="mailto:contact@credis.org">contact@credis.org</a><br/>
+    <label>Support technique : </label>Dominique Guardiola ( <a href="http://www.quinode.fr">Quinode</a> ) 04.27.86.84.37 - <a href="mailto:contact@quinode.fr">contact@quinode.fr</a>
+    </p>
+    
+    <span class="left">
+    Propulsé par <a href="http://www.django-fr.com/"><img src="/media/tidjango.png" align="top" border="0"/></a> - <a href="#" onclick="javascript:$('p.support').slideToggle('slow');return false;" {% icon 'information' %}>Support, Questions</a>
+    
+    </span>
+    
+    <span class="deco">
+    {% if user.is_authenticated %} <a href="/accounts/logout/" {% icon 'door_out' %}>Déconnexion</a> {% endif %}
+    </span>
+    
+    
+    {% block footer %}
+    {% endblock %}
+<br/><br/>
+</div>
+    
+
+<script type="text/javascript" src="/media/js/jquery.biggerlink.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('ul.chantiers > li , div.navbox > p').biggerlink({clickableclass:'hot',hoverclass:'roll'});
+});
+</script>
+
+
+</body>
+</html>

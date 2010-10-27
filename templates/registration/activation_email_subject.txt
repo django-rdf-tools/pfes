@@ -1,0 +1,1 @@
+﻿Confirmez votre inscription au site {{ site.name }}

@@ -1,0 +1,16 @@
+Django==1.2.3
+PIL>=1.1.7
+South==0.7.2
+-e git+http://github.com/jpwatts/django-positions.git@v0.4.3#egg=django-positions
+-e hg+http://bitbucket.org/ubernostrum/django-registration#egg=django-registration
+django-taggit==0.9.1
+docutils>=0.7
+flickrapi==1.4.2
+gdata==2.0.12
+geopy==0.94
+psycopg2>=2.2.2
+-e git://github.com/smulloni/python-oembed.git@e796eafbde766f997e5fb0adb6c3897f3639d050#egg=python_oembed-0.1.1-py2.7-dev
+simplejson==2.1.1
+sorl-thumbnail==3.2.5
+wsgiref==0.1.2
+yolk==0.4.1

@@ -1,0 +1,15 @@
+﻿Bonjour,
+
+Quelqu'un (vous, normalement) a demandé à être inscrit sur le site {{site.name}}.
+Pour confirmer cette demande d’inscription, cliquez simplement sur le lien ci-dessous :
+
+http://{{site.domain}}/accounts/activate/{{activation_key}}/
+
+Si le clic ne donne rien, copiez-collez cette adresse dans la barre d'adresse de votre navigateur web (c'est là ou se trouve déjà en général une adresse http://...)
+
+Si vous n’avez rien demandé, vous n’avez rien à faire, ne cliquez pas sur ce lien qui expirera de lui-même, et nous ne vous enverrons plus aucun e-mail.
+
+Ce lien d'activation expirera dans {{expiration_days}} jours.
+
+Merci pour votre inscription!
+L'equipe de {{site.name}}

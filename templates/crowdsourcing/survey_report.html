@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crowdsourcing %}
+{% block headers %}
+{% yahoo_api %}
+<script type="text/javascript" src="/media/js/survey.js"></script>
+{% endblock headers %}
+
+{% block title %}
+<span class="breadcrumb"><a href="/">Accueil</a> >
+<a href="/chantiers/">Chantiers</a> > 
+{{ id_chantier|safe }} >
+</span>
+{{ survey.title }}{% endblock %}
+
+{% block content %}
+  {% include "crowdsourcing/embeded_survey_report.html" %}
+{% endblock %}

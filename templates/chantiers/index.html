@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block metatitle %}Liste des chantiers en cours{% endblock %}
+{% block title %}Liste des chantiers{% endblock %}
+
+{% block colonne %}
+{% include 'rssplug/feed.html' %}
+{% endblock colonne %}
+
+{% block content %}
+    {% if liste %}   
+        {%  include 'chantiers/liste.html' %}
+        
+    {% else %}
+        <p>Aucun chantier en cours actuellement.</p>
+    {% endif %}
+
+{% endblock %}
+

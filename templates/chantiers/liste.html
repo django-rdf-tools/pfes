@@ -1,0 +1,7 @@
+<ul class="chantiers">
+    {% for chantier in liste %}
+    <li><a href="/chantiers/{{ chantier.slug }}/">{{ chantier.nom }}</a>
+        <p>{{chantier.description|safe|truncatewords_html:20}}</p>
+        </li>
+    {% endfor %}
+</ul>

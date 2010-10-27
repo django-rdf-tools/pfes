@@ -1,0 +1,32 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Inscription sur le site {{site_name}}{% endblock %}
+
+{% block content %}
+
+
+<p>Ce formulaire va vous permettre de vous inscrire sur le site.<br/>
+Vous pourrez ensuite <a href="/accounts/login/">vous identifier</a></p>
+
+
+
+<form class="reg" method="post" action="{% url registration.views.register %}">
+
+{% if form.errors %}
+	<p class="warn_errors">Des erreurs ont été détectées</p>
+{% endif %}
+
+<fieldset>
+{{ form.as_p }}
+
+
+<p><label> </label><input type="submit" value="Valider"/></p>
+
+</fieldset>
+
+{% csrf_token %}
+</form>
+
+
+
+{% endblock %}

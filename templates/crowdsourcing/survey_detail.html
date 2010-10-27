@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load crowdsourcing %}
+{% block metatitle %}Sondage : {{ survey.title }}{% endblock %}
+
+{% block title %}
+<span class="breadcrumb"><a href="/">Accueil</a> >
+<a href="/chantiers/">Chantiers</a> > 
+{{ id_chantier|safe }} >
+</span>
+{{ survey.title }}{% endblock %}
+
+{% block content %}
+
+{% thanks_for_entering request forms survey %}
+<p><b>Sujet du sondage</b> : <br/>
+    {% firstof survey.description survey.tease %} </p>
+
+
+{% if forms %}
+  <form method="POST" enctype="multipart/form-data" class="survey">
+    {% for form in forms %}
+        
+        <fieldset {% if forloop.first %}id="q1"{% endif %}>
+        {{ form.as_p }} 
+        </fieldset>
+            
+    {% endfor %}
+    
+    <input type="submit" value="Poster mes réponses"/>
+  </form>
+{% endif %}
+
+
+<script type="text/javascript">
+$(function(){
+    $("fieldset#q1").hide();    
+});
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,60 @@
+{% load crowdsourcing %}
+
+<p><b>Sujet du sondage</b> : <br/>{{ report.get_summary }}</p>
+
+{% if thanks %}
+  <p>Thanks for your submission.</p>
+{% endif %}
+
+{% if filters %}
+  <h3>Filters:</h3>
+  {% filters_as_ul filters %}
+{% endif %}
+
+{% if not fields %}
+  All questions in this survey have private answers.
+{% endif %}
+
+{% for display in report.get_survey_report_displays %}
+<div class="mydisplay">
+  {% if display.is_text %}
+    {{ display.annotation|safe }}
+  {% else %}{% if display.is_pie %}
+    {% for question in display.questions %}
+      {% yahoo_pie_chart display question request.GET %}
+    {% endfor %}
+  {% else %}{% if display.is_map %}
+    {% for question in display.questions %}
+      {% google_map display question report %}
+    {% endfor %}
+  {% else %}{% if display.is_bar %}
+    {% yahoo_bar_chart display request.GET request.user.is_staff %}
+  {% else %}{% if display.is_line %}
+    {% yahoo_line_chart display request.GET request.user.is_staff %}
+  {% else %}{% if display.is_slideshow %}
+    {% for question in display.questions %}
+      {% simple_slideshow display question request.GET "jcarousel-skin-tango" %}
+    {% endfor %}
+  {% else %}{% if display.is_download %}
+    {% download_tags survey %}
+  {% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}
+  
+<div class="display_comments">
+    <span>Commentaires</span>
+    <div class="comments_list">
+    {% for question in display.questions %}
+       {% show_comments comments_list question.pk %}
+    {% endfor %}
+    </div>
+</div>
+</div>
+{% endfor %}
+
+{% load_maps_and_charts %}
+{% include crowdsourcing/comments.html %}
+
+{% if archive_fields %}
+<h3>Submissions:</h3>
+  {% submissions page_obj.object_list fields %}
+  {% paginator survey report pages_to_link page_obj %}
+{% endif %}

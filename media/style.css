@@ -1,0 +1,536 @@
+/* @override http://localhost:8000/media/style.css */
+
+
+body{
+	font: 0.9em 'Droid Sans', arial, serif;
+}
+
+div#content{
+	margin-bottom: 30px;
+	min-height: 450px;
+	margin-left: 30px;
+	margin-right: 300px;
+}
+
+/* @group footer */
+
+#footer hr{
+	margin-bottom: 10px;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #2748a3;
+}
+
+div#footer span.left{
+	font-size: 13px;
+	color: #a39ea2;
+	font-style: italic;
+	display: inline-block;
+}
+
+
+div#footer span.deco a{
+	float: right;
+	display: inline-block;
+}
+
+p.support{
+	border: 1px dashed #808080;
+	padding: 10px;
+	line-height: 23px;
+	display: inline;
+	width: 600px;
+	background-color: #ebeffe;
+}
+
+p.support label{
+	display: inline-block;
+	width: 130px;
+	color: #838383;
+}
+
+
+
+/* @end */
+
+h1 {
+	font: 48px 'Lobster', arial, serif;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #7a4b3d;
+}
+
+h2, h3{
+	color: #3e3e3e;
+}
+
+h2{
+	margin-left: 10px;
+}
+
+
+span.breadcrumb,
+span.breadcrumb a{
+	text-decoration: none;
+	color: #9fafc1;
+	font-size: 85%;
+}
+
+span.breadcrumb a:hover{
+	text-decoration: underline;
+	color: #2d25ff;
+}
+
+.icon { padding-left: 20px; background-repeat: no-repeat;}
+
+/* @group reg forms */
+
+form.reg p label{
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+}
+
+form.reg fieldset{
+	border: 1px solid silver;
+	background-color: #fcffd2;
+	display: inline;
+	padding-right: 20px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;	
+	-webkit-border-radius: 4px;
+}
+
+form.reg input[type=text],
+form.reg input[type=password]{
+	font: 1em 'Droid Sans', arial, serif;
+	border-radius: 4px;
+	-moz-border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	padding-left: 6px;
+	padding: 4px;
+	margin-left: 4px;
+	border: 1px solid #b8b8b8;
+}
+
+form.reg input[type=submit]{
+	background-color: #b2c9eb;
+	border: 3px outset #b2c9eb;
+	font-size: 14px;
+	font-weight: bold;
+	color: #16295a;
+	border-radius: 4px;
+	-moz-border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	padding: 2px 16px;
+	float: right;
+}
+
+form.reg input[type=submit]:hover{
+	background-color: #5cd635;
+	border-color: #5cd635;
+	color: #103010;
+	cursor: pointer;
+}
+
+form.reg p.warn_errors{
+	background-color: #fabda8;
+	padding: 10px;
+	width: 400px;
+}
+
+form.reg ul.errorlist{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #cd0818;
+	text-align: right;
+}
+
+form.reg ul.errorlist li{
+	top: 10px;
+	position: relative;
+}
+
+
+/* @end */
+
+/* @group RSSplug */
+
+div.blogrss{
+	width: 260px;
+	font-size: 12px;
+	float: right;
+	padding: 7px;
+	/*background-color: #8cb6cb;*/
+	background-color: #938162;
+	margin-right: 3px;
+	height: 450px;
+	margin-left: 20px;
+}
+
+.blogrss h3{
+	margin: 5px 0;
+	color: #fff;
+	font-size: 16px;
+}
+
+.blogrss .navbox{
+	/*background-color: #bdd1db;*/
+	background-color: #D4D2A1;
+	overflow-y: auto;
+	height: 350px;
+}
+
+.navbox p{
+	padding: 5px;
+	margin: 0;
+	border-top-style: none;
+	border: 1px solid #e6e6e6;
+}
+
+.navbox p:hover{
+	/*background-color: #c9dfec;*/
+	background-color: #ebeab6;
+}
+
+
+.navbox p:hover a{
+	color: #90040e;
+}
+
+.blogrss p a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #1f2640;
+}
+
+.blogrss p span{
+	text-align: right;
+	font: italic 11px Georgia, "Times New Roman", Times, serif;
+}
+
+.blogrss .footnote{
+	display: block;
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #fff;
+}
+
+
+/* @end */
+
+/* @group Chantiers */
+
+ul.chantiers{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.chantiers li{
+	float: left;
+	display: block;
+	width: 200px;
+	height: 128px;
+	border-style: none;
+	border-width: 1px;
+	margin-right: 10px;
+	padding: 10px;
+	background: url(fond_chantier.png) no-repeat;
+	margin-bottom: 10px;
+}
+
+ul.chantiers li a{
+	display: inline-block;
+	margin-top: 8px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: rgba(250,203,15,0.95);
+	color: #3a3331;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 3px solid transparent;
+	font-size: 14px;
+	line-height: 15px;
+}
+
+
+ul.chantiers li.roll a{
+	background-color: #81000e;
+	color: #fc0;
+	border: 3px solid #ffcb00;
+}
+
+ul.chantiers li p{
+	font-size: 12px;
+	padding-left: 2px;
+	padding-right: 8px;
+	margin-top: 9px;
+}
+
+ul.chantiers li.roll p{
+	color: #81000e;
+}
+p.intro{
+	font-size: 14px;
+	line-height: 18px;
+	border-left: 12px solid #ebebeb;
+	border-right: 12px solid #ebebeb;
+	width: 50%;
+	padding: 20px 5px 15px 20px;
+}
+
+p.intro b{
+	color: #7a4b3d;
+}
+
+p.date_crea{
+	font-style: italic;
+	font-size: 12px;
+	color: #7e7e7e;
+}
+
+div.sondage{
+	padding: 5px 10px;
+	border: 1px solid #c7c7c7;
+	display: inline-block;
+	float: right;
+	width: 36%;
+}
+
+div.sondage h3{
+	background-color: #ebeab6;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding: 10px;
+	margin-top: -5px;
+}
+
+/* @end */
+
+/* @group Commentaires */
+
+#comment_form{
+	padding-left: 17px;
+}
+
+p.comm_title{
+	background: url(/media/comm_title.jpg) no-repeat;
+	padding: 15px 12px 15px 80px;
+	color: #5c5c5c;
+}
+
+p.comm_title b{
+	font: 22px/22px 'Lobster', arial, serif;
+	color: #80a839;
+	letter-spacing: 1px;
+	top: -5px;
+	position: relative;
+}
+
+#comment_form label{
+	display: block;
+	font-size: 15px;
+	margin-bottom: 9px;
+	font-weight: bold;
+	line-height: 22px;
+}
+
+#comment_form label span{
+	color: #9c9c9c;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 13px;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: -5px;
+}
+
+#comment_form input.submit-post{
+	background-color: #f5db26;
+	border: 4px outset #f5db26;
+	padding: 4px 15px;
+	position: relative;
+	top: -9px;
+	font-size: 14px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+textarea#id_comment,
+form.survey textarea{
+	font: 0.9em 'Droid Sans', arial, serif;
+	height: 97px;
+	padding: 7px;
+	color: #363636;
+	font-size: 15px;
+	width: 95%;
+	border: 2px solid #a5a5a5;
+	background-image: url(/media/petits-carreaux.jpg);
+	overflow-y: auto;
+
+}
+
+div.comment{
+	border-bottom: 2px solid #aaa;
+	padding-bottom: 15px;
+	padding-left: 20px;
+}
+
+div.comment p{
+	font-size: 13px;
+	color: #9c9c9c;
+	margin-left: -20px;
+}
+
+div.comment p a{
+	text-decoration: none;
+	color: #5c83b8;
+}
+
+div.comment p a:hover{
+	text-decoration: underline;
+}
+
+
+
+/* @end */
+
+/* @group Sondages */
+
+form.survey ul{
+	list-style-type: none;
+}
+
+form.survey fieldset{
+	padding: 0 10px;
+	margin-bottom: 15px;
+	border: 1px solid #7c7c7c;
+}
+
+form.survey p label{
+	margin: 0;
+}
+
+form.survey p:first-child label{
+	font-weight: bold;
+	background-color: #fbffcb;
+	line-height: 19px;
+}
+
+
+form.survey input[type=submit]{
+	background-color: #b2c9eb;
+	border: 3px outset #b2c9eb;
+	font-size: 14px;
+	font-weight: bold;
+	color: #16295a;
+	border-radius: 4px;
+	-moz-border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	padding: 2px 16px;
+}
+
+form.survey input[type=submit]:hover{
+	background-color: #5cd635;
+	border-color: #5cd635;
+	color: #103010;
+	cursor: pointer;
+}
+
+form.survey p.warn_errors{
+	background-color: #fabda8;
+	padding: 10px;
+	width: 400px;
+}
+
+form.survey ul.errorlist{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #cd0818;
+}
+
+form.survey ul.errorlist li{
+	top: 10px;
+	position: relative;
+}
+
+h2.chart_title {
+	margin-bottom: 0;
+	font-size: 16px;
+}
+
+div.mydisplay{
+	position: relative;
+	height: 240px;
+	border-top-style: dashed;
+	width: 840px;
+	border-top-color: #9e9e9e;
+	padding-bottom: 10px;
+}
+
+div.chart_div{
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	top: 40px;
+	left: 0;
+}
+
+div.display_comments{
+	position: absolute;
+	left: 430px;
+	width: 400px;
+	height: 200px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+div.display_comments > span{
+	height: 14px;
+	display: block;
+	padding: 4px;
+	background-color: #ebeab6;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	font-weight: bold;
+}
+
+div.comments_list{
+	height: 177px;
+	overflow-y: auto;
+}
+
+
+ul.scomments{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.scomments li{
+	margin: 0;
+	padding: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	background-color: #f3f3f3;
+	font-size: 11px;
+}
+
+ul.scomments li span{
+	font-weight: bold;
+}
+
+/* @end */

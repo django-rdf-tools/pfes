@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block metatitle %}Chantier en cours : {{ chantier.nom }}{% endblock %}
+
+{% block title %}
+<span class="breadcrumb"><a href="/">Accueil</a> >
+<a href="/chantiers/">Chantiers</a> > </span>
+{{ chantier.nom }}
+{% endblock %}
+
+
+{% block colonne %}{%  if docs %}
+     
+<div class="blogrss">
+             <h3><img src="/media/library24.png" align="absmiddle"/> Documents de travail</h3>
+             <div class="navbox">
+            {% for doc in docs %}
+            <p><a target="_blank" href="{{ doc.link }}">{{ doc.title|safe }}</a></p>
+             {% endfor %}
+         </div>
+         <span class="footnote">( Les documents, stockés chez Google Documents, s'ouvriront dans une nouvelle fenêtre )</span>
+</div>   
+{% endif %}{% endblock colonne %}
+
+{% block content %}
+    {% if chantier %}
+        {% if nbsondages > 0 %}
+            <div class="sondage">
+            <h3>Sondages en cours</h3>        
+            {% for sondage in sondages %}
+                <p><b>{{sondage.title}} : </b>
+                &nbsp;&nbsp;<a href="/sondages/{{sondage.slug}}/">Répondre<a/>
+                </p>
+            {% endfor %}    
+            </div>
+        {% endif %} 
+        
+        <p class="intro"><b>Objectif : </b> {{ chantier.description }}</p>
+        <p class="date_crea">Chantier lancé le {{ chantier.date_creation|date:"SHORT_DATE_FORMAT" }}</p>
+                
+        {% include 'commentaires.html' %}
+    
+    {% else %}
+        <p>Aucun chantier ici (mauvaise adresse).</p>
+    {% endif %}
+
+{% endblock %}
+

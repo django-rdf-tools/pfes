@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+
+{% block colonne %}
+{% include 'rssplug/feed.html' %}
+{% endblock colonne %}
+
+{% block content %}
+
+    <div class="siteinfo">Bienvenue, ce site est en phase de construction collaborative ! </div>
+    
+    <p><a href="/accounts/invite">Inviter d’autres participants</a>, susceptibles de contribuer aux chantiers en cours</p>
+    
+    <h3>Chantiers en cours</h3>
+    
+    {% include 'chantiers/liste.html' %}
+    
+
+{% endblock %}

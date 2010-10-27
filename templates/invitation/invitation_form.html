@@ -1,0 +1,30 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Invitez d’autres personnes sur le site {{site_name}}{% endblock %}
+
+{% block content %}
+
+
+<p>Invitez d’autres personnes susceptibles de contruire avec nous cette plate-forme d’échanges solidaires.<br/>
+Il vous reste {{ remaining_invitations }} invitations.</p>
+
+
+<form class="reg" method="post" action="{% url invitation.views.invite %}">
+
+{% if form.errors %}
+	<p class="warn_errors">Des erreurs ont été détectées</p>
+{% endif %}
+
+<fieldset>
+
+<p><label>Expéditeur: </label>&nbsp;&nbsp;{{ sender }}</p>
+<p><label>Destinataire: </label>{{ form.email }}</p>
+<p><label> </label><input type="submit" value="Valider"/></p>
+
+</fieldset>
+
+{% csrf_token %}
+</form>
+
+
+{% endblock %}

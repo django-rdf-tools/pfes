@@ -1,0 +1,16 @@
+﻿{% extends "base.html" %}
+
+{% block metatitle %}Mauvaise clé invitation{% endblock %}
+
+{% block title %}Erreur sur la clé d’invitation{% endblock %}
+
+{% block content %}
+
+
+	<p>Ah, ça n'a pas marché...<br/>
+	Soit votre lien d’invitation était incorrect (était-il coupé en deux dans votre email?),<br/>
+	ou la période d’expiration de {{ expiration_days }} jour après l’envoi de cette invitation est déjà passée.</p>
+	
+	<p><a href="/index.html">Retour à l’accueil</a>.</p>
+
+{% endblock %}
