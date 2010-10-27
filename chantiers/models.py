@@ -16,7 +16,7 @@ class Chantier(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     position = PositionField()
-    tags = TaggableManager(blank = True)
+#    tags = TaggableManager(blank=True)
     sondages = models.ManyToManyField(Survey, blank = True)
 
     class Meta:

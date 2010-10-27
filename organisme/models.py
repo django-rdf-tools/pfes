@@ -22,7 +22,7 @@ class Organisme(models.Model):
     date_modification = models.DateTimeField(auto_now=True)
     auteur = models.ForeignKey(User,null=True)
     relations = models.ManyToManyField("self", through='Relation',symmetrical=False)
-    bidon = models.CharField(blank=True, max_length=80)  
+    bidon2 = models.CharField(blank=True, max_length=80)
 
 #mots-cles : voir les solutions existantes d'abord
 #trouver un field telephone
