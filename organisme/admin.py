@@ -1,7 +1,7 @@
 ﻿# -*- coding:utf-8 -*-
 from django.contrib import admin
-from orga.models import Organisme
-from orga.models import Relation
+from organisme.models import Organisme
+from organisme.models import Relation
 
 
 class RelationInline(admin.TabularInline):

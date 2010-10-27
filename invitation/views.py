@@ -20,7 +20,7 @@ def invited(request, invitation_key=None):
         if invitation_key and is_key_valid(invitation_key):
             return HttpResponseRedirect(reverse('registration_register'))
             #template = 'registration/registration_form.html'
-            #return direct_to_template(request, template, {'backend': 'registration.backends.credis.DefaultBackend', 'form_class':pfes.forms.CredisRegistrationForm})
+            #return direct_to_template(request, template, {'backend': 'registration.backends.credis.DefaultBackend', 'form_class':main.forms.CredisRegistrationForm})
         else:
             template = 'invitation/wrong_invitation_key.html'
             return direct_to_template(request, template, {'invitation_key': invitation_key,'expiration_days':settings.ACCOUNT_INVITATION_DAYS})

@@ -76,7 +76,7 @@ INSTALLED_APPS = (
     'registration',
     'invitation', #intégré au projet
     'positions',
-    'orga',
+    'organisme',
     'sorl',
     'crowdsourcing',#intégré au projet
     'taggit',
