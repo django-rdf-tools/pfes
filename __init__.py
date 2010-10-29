@@ -6,6 +6,7 @@ for a in settings.INSTALLED_APPS:
         pass
 
 
+
 from django.db import models
 from django.utils.functional import curry
 
