@@ -21,7 +21,6 @@ class Organisme(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     auteur = models.ForeignKey(User,null=True)
-    relations = models.ManyToManyField("self", through='Relation',symmetrical=False)
 
 #mots-cles : voir les solutions existantes d'abord
 #trouver un field telephone
@@ -37,22 +36,3 @@ class Organisme(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('')
-
-# constantes pour les choix de relations
-# voir http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
-REL_OCC = 1
-REL_REG = 2
-REL_PRI = 3
-
-class Relation(models.Model):
-    """Une relation entre deux structures"""   
-    TYPE_RELATIONS = (
-    (REL_OCC, u'Relation occasionnelle'),
-    (REL_REG, u'Relation réguliére'),
-    (REL_PRI, u'Relation privilégiée'),
-    )
-    auteur = models.ForeignKey(Organisme, related_name='auteur_related')
-    cible = models.ForeignKey(Organisme, related_name='cible_related')
-    type = models.PositiveIntegerField(choices=TYPE_RELATIONS)
-    datecrea = models.DateTimeField(auto_now_add=True)
-    datemodif = models.DateTimeField(auto_now=True)
