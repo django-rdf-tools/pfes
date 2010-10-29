@@ -83,7 +83,8 @@ INSTALLED_APPS = (
     'taggit',
     'chantiers',
     'south',
-    'credis',
+    'main',
+    'local',
 )
 
 
