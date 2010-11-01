@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block metatitle %}Chantier en cours : {{ chantier.nom }}{% endblock %}
+{% load icons %}
 
 {% block title %}
 <span class="breadcrumb"><a href="/">Accueil</a> >
@@ -28,7 +29,8 @@
             <h3>Sondages en cours</h3>        
             {% for sondage in sondages %}
                 <p><b>{{sondage.title}} : </b>
-                &nbsp;&nbsp;<a href="/sondages/{{sondage.slug}}/">Répondre<a/>
+                &nbsp;&nbsp;
+                <a href="/sondages/{{sondage.slug}}/" {% icon 'user_comment' %}>Répondre<a/>
                 </p>
             {% endfor %}    
             </div>
