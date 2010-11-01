@@ -20,8 +20,9 @@ def quelchantier(request):
     from crowdsourcing.models import Survey
     from django.template.defaultfilters import first
     """Pour savoir sur quel chantier on est"""
-    if '/sondages/' in request.path:
-        chantier = first(Chantier.objects.filter(sondages__slug = 'points-de-la-charte'))
+    mypath = request.path.split("/")
+    if mypath[1] == 'sondages': 
+        chantier = first(Chantier.objects.filter(sondages__slug = mypath[2]))
         clink = '<a href="/chantiers/'+chantier.slug+'/">'+chantier.nom+'</a>'
         return {'id_chantier': clink }
     else:
