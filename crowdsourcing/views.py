@@ -548,12 +548,15 @@ def _survey_report(request, slug, report, page, templates):
         comments_list[id[0]] = []
     
     reponses = Answer.objects.filter(submission__survey__id__exact = survey.pk).order_by('-id')
-        
+    
+    liste_reponses = []   
     for reponse in reponses:
-        if reponse.comment != '':
+        print liste_reponses
+        if reponse.comment != '' and reponse.question_id not in liste_reponses:
             auteur = reponse.submission.user.first_name +' '+ reponse.submission.user.last_name
             items = comments_list[reponse.question_id]
             comments_list[reponse.question_id] = items + [[auteur,reponse.comment,]]
+            liste_reponses.append(reponse.question_id)
  
     context = dict(
         survey=survey,

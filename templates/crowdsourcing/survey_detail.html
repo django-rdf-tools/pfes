@@ -13,7 +13,7 @@
 
 {% thanks_for_entering request forms survey %}
 <p><b>Sujet du sondage</b> : <br/>
-    {% firstof survey.description survey.tease %} </p>
+    {{ survey.description|linebreaksbr }} </p>
 
 
 {% if forms %}
@@ -34,6 +34,13 @@
 <script type="text/javascript">
 $(function(){
     $("fieldset#q1").hide();    
+    
+    $("label").each(function(e){
+        $(this).html($(this).html().replace(/\n\r?/g, '<br />'));
+    });
+    
+    
+    
 });
 </script>
 

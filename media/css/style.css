@@ -1,5 +1,7 @@
-/* @override http://localhost:8000/media/style.css */
-
+/* @override 
+	http://localhost:8000/media/style.css
+	http://localhost:8000/media/css/style.css
+*/
 
 body{
 	font: 0.9em 'Droid Sans', arial, serif;
@@ -242,7 +244,7 @@ ul.chantiers li{
 	border-width: 1px;
 	margin-right: 10px;
 	padding: 5px 10px 10px;
-	background: url(fond_chantier.png) no-repeat;
+	background: url(/media/fond_chantier.png) no-repeat;
 	margin-bottom: 20px;
 }
 
@@ -456,7 +458,8 @@ form.survey ul{
 form.survey fieldset{
 	padding: 0 10px;
 	margin-bottom: 15px;
-	border: 1px solid #7c7c7c;
+	border: 4px solid #c7c7c7;
+	background-color: #efefef;
 }
 
 form.survey p label{
@@ -465,7 +468,6 @@ form.survey p label{
 
 form.survey p:first-child label{
 	font-weight: bold;
-	background-color: #fbffcb;
 	line-height: 19px;
 }
 
