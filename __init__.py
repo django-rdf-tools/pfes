@@ -5,7 +5,6 @@ for a in settings.INSTALLED_APPS:
     except ImportError:
         pass
 
-
 from django.db import models
 from django.utils.functional import curry
 
