@@ -551,7 +551,6 @@ def _survey_report(request, slug, report, page, templates):
     
     liste_reponses = []   
     for reponse in reponses:
-        print liste_reponses
         if reponse.comment != '' and reponse.question_id not in liste_reponses:
             auteur = reponse.submission.user.first_name +' '+ reponse.submission.user.last_name
             items = comments_list[reponse.question_id]
