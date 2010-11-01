@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
-from pfes.organisme.models import Organisme
+from organisme.models import Organisme
 from django.db import models
 
 class OrganismeLocal(Organisme):
-    """Les champs complémenataires de ce réseau"""
+    """Les champs complémentaires de ce réseau"""
     fse = models.BooleanField(default=True)
     relations = models.ManyToManyField("self", through='Relation',symmetrical=False)
 
