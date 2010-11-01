@@ -13,7 +13,7 @@ Vous pourrez ensuite <a href="/accounts/login/">vous identifier</a></p>
 <form class="reg" method="post" action="{% url registration.views.register %}">
 
 {% if form.errors %}
-	<p class="warn_errors">Des erreurs ont été détectées</p>
+    <p class="warn_errors">Des erreurs ont été détectées</p>
 {% endif %}
 
 <fieldset>
@@ -27,6 +27,24 @@ Vous pourrez ensuite <a href="/accounts/login/">vous identifier</a></p>
 {% csrf_token %}
 </form>
 
-
+<script>
+$(function() {
+    
+    $("#id_username").tipTip({defaultPosition: "right", content: "Le nom d'utilisateur sera affiché à la place de votre vrai nom pour les utilisateurs non enregistrés du site (comme le robot de Google par exemple)"});
+    
+    
+    $("#id_first_name").keyup(setProfile);
+    $("#id_last_name").keyup(setProfile);
+    $("#id_username").keypress(disableMe);
+})
+function setProfile() {
+    var prop = $("#id_first_name").val().charAt(0) + $("#id_last_name").val();
+    $("#id_username").val(prop.toLowerCase());
+}
+function disableMe() { 
+    $("#id_first_name").unbind("keyup");
+    $("#id_last_name").unbind("keyup");
+}
+</script>
 
 {% endblock %}
