@@ -241,9 +241,9 @@ ul.chantiers li{
 	border-style: none;
 	border-width: 1px;
 	margin-right: 10px;
-	padding: 10px;
+	padding: 5px 10px 10px;
 	background: url(fond_chantier.png) no-repeat;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 ul.chantiers li a{
@@ -271,12 +271,42 @@ ul.chantiers li p{
 	font-size: 12px;
 	padding-left: 2px;
 	padding-right: 8px;
-	margin-top: 9px;
+	margin-top: 11px;
 }
 
 ul.chantiers li.roll p{
 	color: #81000e;
 }
+
+
+ul.chantiers li span {
+	
+	background-color: #403a3c;
+	color: #fff;
+	border-radius: 4px;
+	-moz-border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	font-weight: bold;
+	padding-right: 7px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	position: relative;
+	left: 20px;
+	font-size: 14px;
+}
+
+ul.chantiers li span strong{
+	background-color: #f61b18;
+	border-radius: 4px;
+	-moz-border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	padding: 3px 7px;
+	margin-right: 3px;
+	font-size: 14px;
+}
+
+
+
 p.intro{
 	font-size: 14px;
 	line-height: 18px;
@@ -284,6 +314,7 @@ p.intro{
 	border-right: 12px solid #ebebeb;
 	width: 50%;
 	padding: 20px 5px 15px 20px;
+	position: relative;
 }
 
 p.intro b{

@@ -1,7 +1,11 @@
 <ul class="chantiers">
-    {% for chantier in liste %}
+    {% for chantier in chantiers %}
     <li><a href="/chantiers/{{ chantier.slug }}/">{{ chantier.nom }}</a>
-        <p>{{chantier.description|safe|truncatewords_html:20}}</p>
+        <p>{{chantier.description|safe|truncatewords_html:17}}</p>
+        {% if chantier.nbsondages > 0 %}
+            <span><strong>{{chantier.nbsondages}}</strong> sondage{{ chantier.nbsondages|pluralize }} en cours</span>
+        {% endif %}
+        
         </li>
     {% endfor %}
 </ul>
