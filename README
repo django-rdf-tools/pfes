@@ -1,1 +1,18 @@
-Hé ho doucement hein
+Nous voulons proposer un ensemble d'application (appelons cela "la plate-forme") qui puisse servir à un réseau associatif qui l'installerait sur son site d'outil indépendant pour :
+
+    * Gérer ses adhérents et leurs coordonnées
+    * leur permettre de poster des annonces, actualités, événements
+    * leur proposer aussi d'inclure automatiquement ces informations s'il les publie déjà par ailleurs (flux RSS, agenda iCal..)
+    * permettre aux utilisateurs du site de rechercher de manière transversale dans toutes ces informations
+
+Tout ceci ressemble à un CRM  open source orienté ESS, mais l'idée nouvelle ici est la synchronisation des données entre réseaux.
+La condition de base est que plusieurs réseaux associatifs, fédérations, groupements, utilisent ce même outil.
+Voici les avantages de la collaboration :
+
+    * Chaque administrateur pourra déterminer quels informations il partage avec les autres sites, et récupérer aussi de l'information pertinente pour son secteur (filtrage par mots-clés) et donc enrichir son site des annonces, événements... postés chez ses partenaires
+    * Les structures référencées sur un réseau et qui désire apparaitre sur un autre n'auront pas à saisir une deuxième fois leur fiche, seulement les champs de renseignements spécifiques au nouveau réseau.
+    * les fiches structures comme les autres informations ayant un identifiant unique à travers tous les sites, la mise à jour d'une fiche structure ou d'une annonce se propagera automatiquement sur les autres sites, en tenant compte des réglages de l'administrateur de chaque site. Plus de liste de mailings périmées...
+
+Les modules propres au réseau représente des applications django spécifique à chaque site.
+L'ajout d'un CMS en fonction de base est une option à l'étude, mais nécessite qu'un choix soit réalisé sur ce que doit faire un CMS au minimum, c'est là que ça peut devenir compliqué, chacun pouvant avoir en la matière des critères différents.
+Le développement de cette plate-forme en open-source ouvre toutefois la possibilité de mutualiser tous les efforts particuliers : chaque module développé spécifiquement par un réseau pourrait être partagé, ce qui offrirait plusieurs choix en matière de CMS, pour reprendre cet exemple.
