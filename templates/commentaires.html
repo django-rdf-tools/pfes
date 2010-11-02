@@ -13,7 +13,7 @@
     <div class="comment">
         <p><a href="{{ comment.user_url }}">{{ comment.user_name }}</a> -
         <span class="comm_date">{{ comment.submit_date }}</span></p>
-            {{ comment.comment }}
+            {{ comment.comment|urlize }}
     </div>
     {% endfor %}
 
