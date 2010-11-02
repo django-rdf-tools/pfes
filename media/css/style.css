@@ -87,6 +87,28 @@ span.breadcrumb a:hover{
 
 .icon { padding-left: 20px; background-repeat: no-repeat;}
 
+table.users{
+	text-align: left;
+	border-style: solid;
+}
+
+table.users tr{
+	height: 23px;
+}
+
+table.users th{
+	background-color: #d4d2a1;
+	padding: 5px;
+}
+
+table.users td{
+	padding-right: 20px;
+}
+
+table.users tr.even{
+	background-color: #ebebeb;
+}
+
 /* @group reg forms */
 
 form.reg p label{

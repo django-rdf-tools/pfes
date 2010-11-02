@@ -36,7 +36,8 @@ urlpatterns = patterns('',
     
     (r'^$', 'main.views.accueil'),
     (r'^index.html$','main.views.accueil'),
-
+    (r'^utilisateurs.html$','main.views.utilisateurs'),
+    
     #essai...
     #(r'^chantiers/([-\w]+)/sondages/', include('crowdsourcing.urls')),
 

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load icons %}
+{% block title %}Utilisateurs{% endblock %}
+
+
+{% block colonne %}
+{% include 'rssplug/feed.html' %}
+{% endblock colonne %}
+
+{% block content %}
+
+    
+    <table class="users">
+    <thead>
+        <tr>
+            <th>Nom, prénom</th>
+            <th>Email</th>
+            <th>Dernière connection</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in utilisateurs %}
+            <tr class="{% cycle 'odd' 'even' %}">
+                <td>{{u.first_name}} {{u.last_name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.last_login|timesince}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
