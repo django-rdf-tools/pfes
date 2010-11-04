@@ -87,27 +87,6 @@ span.breadcrumb a:hover{
 
 .icon { padding-left: 20px; background-repeat: no-repeat;}
 
-p.warning{
-	padding-left: 10px;
-	border-color: #9b003e;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border-left-style: solid;
-	border-left-width: 8px;
-	margin-left: 5px;
-	width: 430px;
-	font-size: 12px;
-	line-height: 16px;
-	color: #373737;
-	font-style: italic;
-}
-
-p.warning b{
-	color: #9b003e;
-	font-size: 14px;
-	font-weight: bold;
-}
-
 /* @group users_list */
 
 table.users{
@@ -139,6 +118,27 @@ table.users tr.even{
 
 /* @group reg forms */
 
+p.warning{
+	padding-left: 10px;
+	border-color: #9b003e;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-left-style: solid;
+	border-left-width: 8px;
+	margin-left: 5px;
+	width: 430px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #373737;
+	font-style: italic;
+}
+
+p.warning b{
+	color: #9b003e;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 form.reg p label{
 	display: inline-block;
 	width: 200px;
@@ -152,19 +152,38 @@ form.reg fieldset{
 	padding-right: 20px;
 	border-radius: 8px;
 	-moz-border-radius: 8px;	
-	-webkit-border-radius: 4px;
+	-webkit-border-radius: 8px;
+	box-shadow: 0 0 5px #555;
+	-webkit-box-shadow: 0 0 5px #555;
+	-moz-box-shadow: 2 2 5px #555;
+
 }
 
 form.reg input[type=text],
 form.reg input[type=password]{
-	font: 1em 'Droid Sans', arial, serif;
 	border-radius: 4px;
 	-moz-border-radius: 4px;	
 	-webkit-border-radius: 4px;
-	padding-left: 6px;
 	padding: 4px;
 	margin-left: 4px;
 	border: 1px solid #b8b8b8;
+	font: 1em 'Droid Sans', arial, serif;
+	width: 240px;
+}
+
+form.reg input.with_help{
+	background: #fff url(/media/icons/help07.png) no-repeat 218px center;
+}
+
+/*redoublé en JS*/
+
+form.reg input#id_first_name,
+form.reg input#id_last_name{
+	text-transform: capitalize;
+}
+
+form.reg input#id_email{
+	text-transform: lowercase;
 }
 
 form.reg input[type=submit]{
@@ -188,9 +207,9 @@ form.reg input[type=submit]:hover{
 }
 
 form.reg p.warn_errors{
-	background-color: #fabda8;
-	padding: 10px;
-	width: 400px;
+	color: #cd0818;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 form.reg ul.errorlist{
@@ -200,14 +219,25 @@ form.reg ul.errorlist{
 	font-weight: bold;
 	font-size: 0.8em;
 	color: #cd0818;
-	text-align: right;
+	display: inline-block;
 }
 
-form.reg ul.errorlist li{
-	top: 10px;
+form.reg span.error{
+	margin: 0;
+	padding: 0 0 0 210px;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #cd0818;
+	clear: right;
 	position: relative;
+	top: 1px;
+	width: 230px;
+	display: inline-block;
 }
 
+form.reg span.help_text{
+	display: none;
+}
 
 /* @end */
 

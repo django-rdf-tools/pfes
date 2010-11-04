@@ -8,8 +8,8 @@
 {% endif %}
 
 <form method="post" action="{% url django.contrib.auth.views.login %}" class="reg">
-<fieldset>    
-    {{ form.as_p }}
+<fieldset>
+    {% include "forms/registration.html" %} 
     <p><label></label><input type="submit" value="Valider" /></p>
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
@@ -19,5 +19,26 @@
 <p>Si vous n'avez pas encore d'identifiant, utilisez <a href="/accounts/register/">ce formulaire d'inscription</a></p>
 
 <p>Vous avez oublié <a href="/accounts/password/reset/">votre mot de passe</a> ? </p>
+
+<script charset="utf-8">
+$(function() {
+    
+    $("form.reg input[type=text],form.reg input[type=password]").each(function(e){
+        var helptxt = $(this).next("span.help_text");
+        if(helptxt.html()!=''){
+            $(this).attr("title", helptxt.html()).addClass("with_help");
+            helptxt.remove();
+        }
+    })
+    
+    $("form.reg input[type=text],form.reg input[type=password]").tipTip({
+        defaultPosition:"right", maxWidth:"250px"
+        });
+
+});
+</script>
+
+
+
 
 {% endblock %}

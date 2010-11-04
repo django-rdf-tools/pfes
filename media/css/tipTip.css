@@ -1,3 +1,5 @@
+/* @override http://localhost:8000/media/css/tipTip.css */
+
 /* TipTip CSS - Version 1.2 */
 
 #tiptip_holder {
@@ -25,10 +27,9 @@
 }
 
 #tiptip_content {
-	font-size: 11px;
+	font-size: 12px;
 	color: #fff;
 	text-shadow: 0 0 2px #000;
-	padding: 4px 8px;
 	border: 1px solid rgba(255,255,255,0.25);
 	background-color: rgb(25,25,25);
 	background-color: rgba(25,25,25,0.92);
@@ -39,6 +40,9 @@
 	box-shadow: 0 0 3px #555;
 	-webkit-box-shadow: 0 0 3px #555;
 	-moz-box-shadow: 0 0 3px #555;
+	text-align: left;
+	line-height: 16px;
+	padding: 4px 8px;
 }
 
 #tiptip_arrow, #tiptip_arrow_inner {

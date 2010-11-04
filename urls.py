@@ -23,8 +23,7 @@ from main.forms import CredisRegistrationForm
 urlpatterns = patterns('',
 
     # marche pour local dev only, nginx intercepte sur le serveur
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
 
     # (r'^organisme/', include('pfes.organisme.urls')),
 

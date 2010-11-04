@@ -1,5 +1,5 @@
 ﻿{% extends "base.html" %}
-
+{% load compress %}
 {% block title %}Inscription sur le site {{site_name}}{% endblock %}
 
 {% block content %}
@@ -8,8 +8,8 @@
 <p>Ce formulaire va vous permettre de vous inscrire sur le site.<br/>
 Vous pourrez ensuite <a href="/accounts/login/">vous identifier</a></p>
 
-<p class="warning"><b>Précision : </b>  L'inscription est <u>personnelle</u>, merci de ne pas utiliser les champs "nom" et "prénom" pour mentionner la structure que vous représentez.<br/>
-Nous proposerons rapidement la création de votre fiche "structure".<br/>
+<p class="warning"><b>Précision : </b>  L'inscription est <strong>personnelle</strong>, merci de ne pas utiliser les champs "nom" et "prénom" pour mentionner la structure que vous représentez.<br/>
+Nous vous proposerons rapidement la création de votre fiche "structure".<br/>
 Merci pour votre compréhension.
 </p>
 
@@ -20,9 +20,9 @@ Merci pour votre compréhension.
 {% endif %}
 
 <fieldset>
-{{ form.as_p }}
-
-
+    
+{% include "forms/registration.html" %} 
+ 
 <p><label> </label><input type="submit" value="Valider"/></p>
 
 </fieldset>
@@ -30,16 +30,35 @@ Merci pour votre compréhension.
 {% csrf_token %}
 </form>
 
-<script>
+<script type="text/javascript" charset="utf-8" src="/media/js/jquery.capitalise.js"></script>
+<script type="text/javascript" charset="utf-8" src="/media/js/jquery.alphanumeric.js"></script>
+
+<script charset="utf-8">
 $(function() {
+
+    $("#id_first_name , #id_last_name").capitalise();
+    $("#id_username").alphanumeric({ichars:" ,;:/=+%*+°()!{}[]§\"\'°^#€$£&@`"}); //le lowercase passe par le CSS
+    $("#id_email").alphanumeric({ichars:"&§!?+*/:=#%$€£éèàçù,;"});
+        
+        
+    $("form.reg input[type=text],form.reg input[type=password]").each(function(e){
+        var helptxt = $(this).next("span.help_text");
+        if(helptxt.html()!=''){
+            $(this).attr("title", helptxt.html()).addClass("with_help");
+            helptxt.remove();
+        }
+    })
     
-    $("#id_username").tipTip({defaultPosition: "right", content: "Le nom d'utilisateur sera affiché à la place de votre vrai nom pour les utilisateurs non enregistrés du site (comme le robot de Google par exemple)"});
-    
-    
+    $("form.reg input[type=text],form.reg input[type=password]").tipTip({
+        defaultPosition:"right", maxWidth:"250px"
+        });
+        
+     
     $("#id_first_name").keyup(setProfile);
     $("#id_last_name").keyup(setProfile);
     $("#id_username").keypress(disableMe);
-})
+});
+
 function setProfile() {
     var prop = $("#id_first_name").val().charAt(0) + $("#id_last_name").val();
     $("#id_username").val(prop.toLowerCase());
@@ -49,5 +68,7 @@ function disableMe() {
     $("#id_last_name").unbind("keyup");
 }
 </script>
+
+
 
 {% endblock %}

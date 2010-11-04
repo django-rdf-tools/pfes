@@ -1,0 +1,14 @@
+{% for field in form.visible_fields %}
+    {% if forloop.first %}
+        {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
+    {% endif %}
+<p>
+    {% for error in field.errors %}
+    <span class="error">{{error}}</span><br/>
+    {% endfor %}
+    {{ field.label_tag }} {{ field }}
+    <span class="help_text">{{field.help_text}}</span>
+</p>
+{% endfor %}

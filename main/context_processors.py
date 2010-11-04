@@ -3,8 +3,7 @@
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 
-
-def site(request):
+def site_info(request):
     site_info = {'protocol': request.is_secure() and 'https' or 'http'}
     if Site._meta.installed:
         site_info['domain'] = Site.objects.get_current().domain
@@ -12,6 +11,7 @@ def site(request):
     else:
         site_info['domain'] = RequestSite(request).domain
         site_info['name'] = RequestSite(request).name
+    site_info['root'] = site_info['protocol'] + '://' + site_info['domain']
     return site_info
 
 #uniquement si crowdsourcing + chantiers
