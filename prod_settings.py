@@ -42,7 +42,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
-    'main.context_processors.site',
+    'main.context_processors.site_info',
     'main.context_processors.quelchantier',
 )
 
