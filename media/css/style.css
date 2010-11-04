@@ -87,6 +87,29 @@ span.breadcrumb a:hover{
 
 .icon { padding-left: 20px; background-repeat: no-repeat;}
 
+p.warning{
+	padding-left: 10px;
+	border-color: #9b003e;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-left-style: solid;
+	border-left-width: 8px;
+	margin-left: 5px;
+	width: 430px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #373737;
+	font-style: italic;
+}
+
+p.warning b{
+	color: #9b003e;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* @group users_list */
+
 table.users{
 	text-align: left;
 	border-style: solid;
@@ -109,6 +132,10 @@ table.users td{
 table.users tr.even{
 	background-color: #ebebeb;
 }
+
+
+
+/* @end */
 
 /* @group reg forms */
 
