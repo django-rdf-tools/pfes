@@ -9,7 +9,7 @@ class Chantier(models.Model):
     """(Chantier description)"""
     id = exfields.UUIDField(primary_key=True)
     nom = models.CharField(blank=True, max_length=120)
-    slug = exfields.AutoSlugField()
+    slug = exfields.AutoSlugField(populate_from='nom')
     description = models.TextField(blank=True)
 #   bidon = models.TextField(blank=True)
     gdocs_folder = models.CharField(blank=True, max_length=40)

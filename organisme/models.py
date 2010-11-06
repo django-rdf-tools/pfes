@@ -16,7 +16,7 @@ class Organisme(models.Model):
     telephone = models.CharField(max_length=10, blank=True)
     email = models.EmailField()
     url = models.URLField(blank=True)
-    slug = exfields.AutoSlugField()
+    slug = exfields.AutoSlugField(populate_from='nom')
     reseau = models.BooleanField(default=False)
     actif = models.BooleanField(default=True)
     date_creation = exfields.CreationDateTimeField()
