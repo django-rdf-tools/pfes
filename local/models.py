@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 from organisme.models import Organisme
 from django.db import models
+from django_extensions.db import fields as exfields
 
 class OrganismeLocal(Organisme):
     """Les champs complémentaires de ce réseau"""
@@ -20,9 +21,10 @@ class Relation(models.Model):
     (REL_REG, u'Relation réguliére'),
     (REL_PRI, u'Relation privilégiée'),
     )
+    id = exfields.UUIDField(primary_key=true)
     auteur = models.ForeignKey(OrganismeLocal, related_name='auteur_related')
     cible = models.ForeignKey(OrganismeLocal, related_name='cible_related')
     type_relation = models.PositiveIntegerField(choices=TYPE_RELATIONS)
-    date_crea = models.DateTimeField(auto_now_add=True)
-    date_modif = models.DateTimeField(auto_now=True)
+    date_creation = exfields.CreationDateTimeField()
+    date_modification = exfields.ModificationDateTimeField()
 
