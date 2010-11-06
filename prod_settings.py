@@ -76,6 +76,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.comments',
     'django.contrib.gis',
+    'django_extensions',
     'rssplug',
     'registration',
     'invitation', #intégré au projet
