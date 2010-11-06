@@ -8,18 +8,16 @@ from django_extensions.db import fields as exfields
 # Create your models here.
 class Chantier(models.Model):
     """(Chantier description)"""
-    id = exfields.UUIDField(primary_key=True)
     nom = models.CharField(blank=True, max_length=120)
     slug = exfields.AutoSlugField(populate_from='nom')
     description = models.TextField(blank=True)
-#   bidon = models.TextField(blank=True)
     gdocs_folder = models.CharField(blank=True, max_length=40)
     gdocs_email = models.CharField(blank=True, max_length=40)
     gdocs_pass = models.CharField(blank=True, max_length=40)
     date_creation = exfields.CreationDateTimeField()
     date_modification = exfields.ModificationDateTimeField()
     position = PositionField()
-#    tags = TaggableManager(blank=True)
+#   tags = TaggableManager(blank=True)
     sondages = models.ManyToManyField(Survey, blank = True)
 
     class Meta:
