@@ -20,6 +20,7 @@ def index(request):
     liste_chantiers = Chantier.objects.all().order_by('position') 
     for c in liste_chantiers:
         c.nbsondages = c.sondages.count()
+    #amelioration possible voir http://www.peterbe.com/plog/django-faster-to-aggregate
     return render_to_response('chantiers/index.html',{'chantiers':liste_chantiers},RequestContext(request))
 
 

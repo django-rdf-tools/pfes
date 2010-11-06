@@ -5,6 +5,8 @@ import os
 import sys
 import site
 
+os.environ["CELERY_LOADER"] = "django"
+
 prev_sys_path = list(sys.path)
 
 for directory in ALLDIRS:

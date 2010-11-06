@@ -146,16 +146,17 @@ form.reg p label{
 }
 
 form.reg fieldset{
-	border: 1px solid silver;
+	border:1px solid #C6C9CB;
 	background-color: #fcffd2;
 	display: inline;
 	padding-right: 20px;
 	border-radius: 8px;
 	-moz-border-radius: 8px;	
 	-webkit-border-radius: 8px;
-	box-shadow: 0 0 5px #555;
-	-webkit-box-shadow: 0 0 5px #555;
-	-moz-box-shadow: 2 2 5px #555;
+	-moz-box-shadow:1px 1px 1px #D8D8D8;	
+	box-shadow: 1px 1px 1px #D8D8D8;
+	-webkit-box-shadow: 1px 1px 1px #D8D8D8;
+
 
 }
 
