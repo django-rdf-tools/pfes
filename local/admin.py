@@ -17,18 +17,16 @@ class OrganismeAdmin(admin.ModelAdmin):
     search_fields = ('nom','sigle') 
     list_display = ('nom','code_postal','ville','reseau')
     #faire un callable qui met le sigle ou le nom
-    prepopulated_fields = {'slug':('nom',)}
+    #prepopulated_fields = {'slug':('nom',)}
     fieldsets = (
         (u'Coordonnées', {
             'fields':('nom','sigle','adresse','code_postal','ville','telephone','email','url')
         }),
-        
-        #(u'Relations', {'fields':('relations',)}),
-        
+                
         (u'Options', {
-            'description':'<b>A ne modifier que si vous savez ce que vous faites...</b>',
+            'description':u'<b>A ne modifier que si vous savez ce que vous faites...</b>',
             'classes':('collapse',),
-            'fields':('reseau','actif','slug','auteur')
+            'fields':('reseau','actif','auteur')
         }),
     )
     inlines = (RelationInline,)
