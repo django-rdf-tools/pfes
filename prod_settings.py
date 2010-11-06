@@ -80,15 +80,18 @@ INSTALLED_APPS = (
     'rssplug',
     'registration',
     'invitation', #intégré au projet
+#    'profiles',
     'positions',
     'organisme',
     'sorl',
     'crowdsourcing',#intégré au projet
     'taggit',
     'chantiers',
-    'south',
+#   'south',
     'main',
     'local',
+#    'compressor'
+#    'djcelery',
 )
 
 
