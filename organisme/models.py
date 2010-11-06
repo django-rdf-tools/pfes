@@ -5,10 +5,9 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django_extensions.db import fields as exfields
 
-
 class Organisme(models.Model):
     """Une structure référencée sur le site"""
-    id = exfields.UUIDField(primary_key=true)
+    id = exfields.UUIDField(primary_key=True)
     nom = models.CharField(max_length=254)
     sigle = models.CharField(max_length=24, blank=True)
     adresse = models.CharField(max_length=512)
@@ -29,7 +28,7 @@ class Organisme(models.Model):
 #logo / thumb
 
     class Meta:
-        abstract = true
+        abstract = True
         ordering = ['nom']
         verbose_name, verbose_name_plural = "organisme", "organismes"
 

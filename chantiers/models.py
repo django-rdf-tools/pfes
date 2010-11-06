@@ -7,7 +7,7 @@ from django_extensions.db import fields as exfields
 # Create your models here.
 class Chantier(models.Model):
     """(Chantier description)"""
-    id = exfields.UUIDField(primary_key=true)
+    id = exfields.UUIDField(primary_key=True)
     nom = models.CharField(blank=True, max_length=120)
     slug = models.AutoSlugField()
     description = models.TextField(blank=True)

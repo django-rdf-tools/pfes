@@ -21,7 +21,7 @@ class Relation(models.Model):
     (REL_REG, u'Relation réguliére'),
     (REL_PRI, u'Relation privilégiée'),
     )
-    id = exfields.UUIDField(primary_key=true)
+    id = exfields.UUIDField(primary_key=True)
     auteur = models.ForeignKey(OrganismeLocal, related_name='auteur_related')
     cible = models.ForeignKey(OrganismeLocal, related_name='cible_related')
     type_relation = models.PositiveIntegerField(choices=TYPE_RELATIONS)
