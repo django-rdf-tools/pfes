@@ -1,3 +1,24 @@
+# -*- coding:utf-8 -*-
+#Modification du modèle User
+from django.db import models
+from django.db.models.fields import AutoField
+from django.contrib.auth.models import User
+from django_extensions.db.fields import UUIDField
+
+if type(User._meta.pk) != type(UUIDField()):
+    for f in User._meta.local_fields:
+        if f.name == 'email':
+            f.null = False
+            f.blank = False
+        if f.name == 'id':
+            User._meta.local_fields.remove(f)
+    User._meta.pk = None
+    uuidfield = UUIDField(primary_key=True)
+    User.add_to_class("id", uuidfield)
+    temp = User._meta.local_fields.pop()
+    User._meta.local_fields = [temp] + User._meta.local_fields
+
+
 from django.conf import settings
 for a in settings.INSTALLED_APPS:
     try:
