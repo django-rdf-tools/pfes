@@ -3,6 +3,7 @@ PIL>=1.1.7
 South==0.7.2
 -e git+http://github.com/jpwatts/django-positions.git@v0.4.3#egg=django-positions
 -e hg+http://bitbucket.org/ubernostrum/django-registration#egg=django-registration
+-e hg+http://bitbucket.org/ubernostrum/django-profiles#egg=django-profiles
 django-taggit==0.9.1
 docutils>=0.7
 flickrapi==1.4.2

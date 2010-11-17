@@ -5,6 +5,7 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django_extensions.db import fields as exfields
 
+
 class Organisme(models.Model):
     """Une structure référencée sur le site"""
     id = exfields.UUIDField(primary_key=True)
@@ -21,7 +22,7 @@ class Organisme(models.Model):
     actif = models.BooleanField(default=True)
     date_creation = exfields.CreationDateTimeField()
     date_modification = exfields.ModificationDateTimeField()
-    auteur = models.ForeignKey(User,null=True)
+    membres = models.ManyToManyField(User)
 
 #mots-cles : voir les solutions existantes d'abord
 #trouver un field telephone
@@ -38,3 +39,4 @@ class Organisme(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('')
+ 

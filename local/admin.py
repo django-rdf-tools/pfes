@@ -4,11 +4,11 @@ from local.models import OrganismeLocal
 from local.models import Relation
 
 
-class RelationInline(admin.TabularInline):
-    model = Relation
-    fk_name = 'auteur'
-    raw_id_fields = ('cible',)
-    extra = 1
+#class RelationInline(admin.TabularInline):
+#    model = Relation
+#    fk_name = 'auteur'
+#    raw_id_fields = ('cible',)
+#    extra = 1
 
 class OrganismeAdmin(admin.ModelAdmin):
     #save_on_top = True
@@ -20,15 +20,15 @@ class OrganismeAdmin(admin.ModelAdmin):
     #prepopulated_fields = {'slug':('nom',)}
     fieldsets = (
         (u'Coordonnées', {
-            'fields':('nom','sigle','adresse','code_postal','ville','telephone','email','url')
+            'fields':('nom','sigle','adresse','code_postal','ville','telephone','email','url','fse')
         }),
                 
         (u'Options', {
             'description':u'<b>A ne modifier que si vous savez ce que vous faites...</b>',
             'classes':('collapse',),
-            'fields':('reseau','actif','auteur')
+            'fields':('reseau','actif',)
         }),
     )
-    inlines = (RelationInline,)
+#    inlines = (RelationInline,)
     
-admin.site.register(OrganismeLocal,OrganismeAdmin)
+#admin.site.register(OrganismeLocal,OrganismeAdmin)
