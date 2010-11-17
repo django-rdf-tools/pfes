@@ -3,7 +3,6 @@ from django.contrib import admin
 from local.models import OrganismeLocal
 from local.models import Relation
 
-
 #class RelationInline(admin.TabularInline):
 #    model = Relation
 #    fk_name = 'auteur'
